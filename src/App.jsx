@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import GameCanvas from './components/GameCanvas.jsx';
-import { TEAMS, DIFFICULTY_LEVELS, GAME_DURATION, HALF_TIME, OVERTIME_DURATION } from './constants.js';
+import { LEAGUES, DIFFICULTY_LEVELS, GAME_DURATION, HALF_TIME, OVERTIME_DURATION } from './constants.js';
+import * as Career from './utils/career.js';
 import LeagueTable from './components/LeagueTable.jsx';
 import TournamentBracket from './components/TournamentBracket.jsx';
 import { generateFixtures, calculateLeagueTable, generateTournamentBracket, simulateMatch } from './utils/gameModes.js';
@@ -8,9 +9,11 @@ import PenaltyShootout from './components/PenaltyShootout.jsx';
 
 const App = () => {
     const [screen, setScreen] = useState('menu');
-    const [player1Team, setPlayer1Team] = useState(TEAMS[0]);
-    const [player2Team, setPlayer2Team] = useState(TEAMS[1]);
+    const [career, setCareer] = useState(Career.loadCareer());
+    const [player1Team, setPlayer1Team] = useState(LEAGUES["super_lig"].teams[0]);
+    const [player2Team, setPlayer2Team] = useState(LEAGUES["super_lig"].teams[1]);
     const [selectedOpponent, setSelectedOpponent] = useState(null);
+    const [selectedLeagueId, setSelectedLeagueId] = useState(null);
     const [isOpponentAI, setIsOpponentAI] = useState(true);
     const [difficulty, setDifficulty] = useState('normal');
     
@@ -22,15 +25,6 @@ const App = () => {
 
     const [overlay, setOverlay] = useState(null);
     const [countdown, setCountdown] = useState(3);
-
-    const [league, setLeague] = useState(() => {
-        const saved = localStorage.getItem('league');
-        return saved ? JSON.parse(saved) : null;
-    });
-    const [tournament, setTournament] = useState(() => {
-        const saved = localStorage.getItem('tournament');
-        return saved ? JSON.parse(saved) : null;
-    });
     
     const [selectionPurpose, setSelectionPurpose] = useState('quick');
     const [currentMatch, setCurrentMatch] = useState(null);

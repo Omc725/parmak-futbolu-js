@@ -4,7 +4,7 @@
 
 Hızlı tempolu, eğlenceli ve tamamen tarayıcı tabanlı bir masa futbolu (langırt) oyunu! Takımını seç, yapay zekaya karşı farklı modlarda mücadele et ve şampiyonluğa ulaş!
 
-✨ Oyunu Hemen Oyna! ✨
+✨ Oyunu Hemen Oyna! ✨ https://omc725.github.io/parmak-futbolu-js/
 
 Bu proje, React ve Vite kullanılarak geliştirilmiştir ve modern bir Progressive Web App (PWA) olarak tasarlanmıştır.
 🚀 Bu Bir Progressive Web App (PWA)!

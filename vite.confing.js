@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  // GitHub Pages için projenin alt dizinini belirtir
   base: '/parmak-futbolu-js/', 
   
   plugins: [
@@ -41,6 +42,6 @@ export default defineConfig({
   ],
   server: {
     port: 3000,
-    host: '0.0.0.0', // Aynı ağdaki diğer cihazlardan erişim için
+    host: '0.0.0.0',
   },
 });

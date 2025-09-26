@@ -1,3 +1,73 @@
+# Parmak Futbolu  ⚽
+
+![alt text](https://omc725.github.io/parmak-futbolu-js/icon-512.png)
+
+Hızlı tempolu, eğlenceli ve tamamen tarayıcı tabanlı bir masa futbolu (langırt) oyunu! Takımını seç, yapay zekaya karşı farklı modlarda mücadele et ve şampiyonluğa ulaş!
+
+✨ Oyunu Hemen Oyna! ✨
+
+Bu proje, React ve Vite kullanılarak geliştirilmiştir ve modern bir Progressive Web App (PWA) olarak tasarlanmıştır.
+🚀 Bu Bir Progressive Web App (PWA)!
+
+Bu oyun, sıradan bir web sitesinden daha fazlasıdır. Bir PWA olması sayesinde size uygulama benzeri bir deneyim sunar.
+PWA Nedir?
+
+Progressive Web App (PWA), modern web teknolojilerini kullanarak kullanıcılara mobil uygulama benzeri bir deneyim sunan web uygulamasıdır. Bunun anlamı:
+
+    Yüklenebilirlik: Oyunu bilgisayarınızın masaüstüne veya telefonunuzun ana ekranına bir uygulama gibi ekleyebilirsiniz.
+
+    Çevrimdışı Çalışma: Bir kez yüklendikten sonra, internet bağlantınız olmasa bile oyunu açıp oynayabilirsiniz. Kariyeriniz her zaman sizinle!
+
+    Hız: Uygulama, önbelleğe alma teknolojileri sayesinde çok daha hızlı açılır ve çalışır.
+
+    Güvenilirlik: İnternet bağlantınız zayıf olsa bile güvenilir bir şekilde çalışır.
+
+PWA Olarak Nasıl Yüklenir?
+
+Oyunu bir uygulama gibi yüklemek çok kolaydır:
+
+🖥️ Bilgisayarda (Chrome, Edge):
+
+    Oyun linkine gidin.
+
+    Adres çubuğunun en sağında, ekran veya bilgisayar monitörü gibi görünen Yükle (Install) ikonuna tıklayın.
+
+    Çıkan pencerede "Yükle" butonuna basın.
+
+    Oyun artık masaüstünüzde bir kısayol ile açabileceğiniz bağımsız bir uygulama olarak görünecektir.
+
+📱 Mobil Cihazlarda (Android/iOS):
+
+    Oyun linkini tarayıcınızda (Chrome, Safari vb.) açın.
+
+    Tarayıcının menüsünü açın (genellikle üç nokta ⋮ veya paylaş 📤 ikonu).
+
+    "Ana Ekrana Ekle" (Add to Home Screen) veya "Uygulamayı Yükle" (Install App) seçeneğini bulun ve tıklayın.
+
+    Oyun, diğer uygulamalarınızın yanında bir ikon olarak ana ekranınıza eklenecektir.
+
+🎮 Oyun Modları
+
+    Kariyer Modu: (Çok Yakında) Favori liginden bir takım seç, sezonlar boyunca mücadele et, şampiyonluklar kazan ve Avrupa kupalarına katılma hakkı elde et!
+    (Şimdilik sadece Lig Modu mevcut.)
+
+    Hızlı Maç: Canın sıkıldığında anında bir maça başla.
+
+    Turnuva Modu: (Çok Yakında) Tek elemeli turnuvalarda zafere ulaşmaya çalış.
+
+🛠️ Kullanılan Teknolojiler
+
+    Kütüphane: React
+
+    Derleme Aracı: Vite
+
+    Stil: Tailwind CSS
+
+    Dağıtım: GitHub Pages & GitHub Actions
+
+    PWA: Vite PWA Plugin
+
+
 # Parmak Futbolu (JavaScript & React Versiyonu)
 
 React ile geliştirilmiş dinamik ve etkileşimli bir langırt (masa futbolu) oyunudur. Bu proje, TypeScript ile yazılmış orijinal versiyonun JavaScript'e dönüştürülmüş halidir.

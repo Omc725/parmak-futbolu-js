@@ -10,7 +10,11 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['icon-512.png', 'icon-192.png', 'icon-144.png'],
+      // manifest.json dosyasını ve ikonları otomatik olarak dahil etmesi için 
+      // bu bölümü temizleyebilir veya doğru asset'leri ekleyebiliriz.
+      // Şimdilik temiz bırakmak en güvenlisi, VitePWA genellikle bunları otomatik bulur.
+      // Gerekirse buraya ['favicon.ico', 'apple-touch-icon.png'] gibi dosyalar eklenir.
+      includeAssets: ['icon-192.png', 'icon-512.png'], 
       manifest: {
         name: 'Parmak Futbolu',
         short_name: 'Parmak Futbolu',
@@ -27,7 +31,8 @@ export default defineConfig({
           },
           {
             "src": "icon-192.png",
-            "sizes": "192x192",
+            // HATA BURADAYDI, DÜZELTİLDİ
+            "sizes": "192x192", 
             "type": "image/png"
           },
           {

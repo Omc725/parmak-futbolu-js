@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   base: '/parmak-futbolu-js/', 
+  
   plugins: [
     react(),
     VitePWA({

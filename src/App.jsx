@@ -366,12 +366,10 @@ const App = () => {
     <div className="w-full max-w-md bg-slate-800/50 p-6 rounded-2xl shadow-2xl border border-slate-700/50 flex flex-col gap-4">
         <h1 className="text-5xl font-extrabold text-center text-white drop-shadow-lg mb-4">Parmak Futbolu</h1>
         
-        {/* Hızlı Maç Modu */}
+        {/* Hızlı Maç butonu (şimdilik aynı kalabilir, daha sonra güncellenecek) */}
         <button 
             onClick={() => { 
                 setSelectionPurpose('quick'); 
-                // Hızlı maç için tüm takımları listelemek üzere `team_selection` ekranına git
-                // Lig seçimi bu mod için gerekli değil
                 setScreen('team_selection'); 
             }} 
             className="w-full px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 rounded-lg text-xl font-bold shadow-lg transform hover:scale-105 transition-transform duration-200"
@@ -379,17 +377,15 @@ const App = () => {
             Hızlı Maç
         </button>
         
-        {/* Ayırıcı Çizgi */}
         <div className="border-t border-slate-700 my-2"></div>
 
-        {/* Kariyer Modu */}
+        {/* --- YENİ KARİYER SİSTEMİ BUTONLARI --- */}
 
         {/* Kayıtlı bir kariyer varsa "Devam Et" butonunu göster */}
-        {Career.hasSavedCareer() && (
+        {career && (
             <button 
                 onClick={() => {
-                    // Kariyer verisini tekrar yükleyip state'e atayalım ki en güncel hali olsun.
-                    setCareer(Career.loadCareer()); 
+                    // State zaten yüklü, doğrudan kariyer ekranına git
                     setScreen('career_hub');
                 }} 
                 className="w-full px-6 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-lg text-xl font-bold shadow-lg transform hover:scale-105 transition-transform duration-200"
@@ -398,23 +394,41 @@ const App = () => {
             </button>
         )}
 
-        {/* "Yeni Kariyer Başla" butonu */}
+        {/* "Yeni Kariyer Başla" butonu. */}
         <button 
             onClick={() => {
-                // Not: Bu basit yaklaşımda, yeni kariyere başlamak eskisini direkt siler.
-                // Gelecekte buraya bir "Emin misiniz?" onayı eklenebilir.
-                if (Career.hasSavedCareer()) {
+                // Yeni bir kariyere başlamadan önce eski verileri temizle
+                if (window.confirm("Mevcut kariyerinizi silip yeni bir tane başlatmak istediğinize emin misiniz?")) {
                     Career.deleteCareer();
                     setCareer(null);
+                    setSelectionPurpose('career');
+                    // Önce lig seçme ekranına yönlendir
+                    setScreen('league_selection'); 
                 }
-                setSelectionPurpose('career');
-                // Kariyer modu için önce lig seçme ekranına yönlendir
-                setScreen('league_selection'); 
             }} 
             className="w-full px-6 py-3 bg-blue-800/80 hover:bg-blue-700/80 rounded-lg text-lg font-semibold shadow-md"
         >
-            Yeni Kariyer Başla
+            {career ? "Yeni Kariyer Başla" : "Kariyer Modu"}
         </button>
+
+        {/* Turnuva modu gelecekte eklenecek, şimdilik bu butonları kapatalım*/
+        <div className="border-t border-slate-700 my-2"></div>
+        
+        {tournament && !tournament.winner && (
+            <button 
+                onClick={() => handleContinueGame('tournament')} 
+                className="w-full px-6 py-4 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 rounded-lg text-xl font-bold shadow-lg transform hover:scale-105 transition-transform duration-200"
+            >
+                Turnuvaya Devam Et
+            </button>
+        )}
+        <button 
+            onClick={() => startNewGame('tournament')} 
+            className="w-full px-6 py-3 bg-purple-800/80 hover:bg-purple-700/80 rounded-lg text-lg font-semibold shadow-md"
+        >
+            Yeni Turnuvaya Başla
+        </button>
+        */}
     </div>
 );
             case 'team_selection': return (

@@ -8,9 +8,7 @@ Hızlı tempolu, eğlenceli ve tamamen tarayıcı tabanlı bir langırt (masa fu
 
 <br>
 
-> ✨ **Oyunu Hemen Oyna!** ✨
->
-> **[https://omc725.github.io/parmak-futbolu-js/](https://omc725.github.io/parmak-futbolu-js/)**
+> ### [✨ **Oyunu Hemen Oyna!** ✨](https://omc725.github.io/parmak-futbolu-js/)
 
 <br>
 
@@ -31,7 +29,7 @@ Bu oyun, sıradan bir web sitesinden daha fazlasıdır. Bir PWA olması sayesind
 
 - **Yüklenebilirlik:** Oyunu bilgisayarınızın masaüstüne veya telefonunuzun ana ekranına bir uygulama gibi ekleyebilirsiniz.
 - **Çevrimdışı Çalışma:** Bir kez yüklendikten sonra, internet bağlantınız olmasa bile oyunu açıp oynayabilirsiniz.
-- **Hız ve Güvenilirlik:** Önbelleğe alma teknolojileri sayesinde çok daha hızlı açılır ve zayıf internet bağlantılarında bile güvenilir bir şekilde çalışır.
+- **Hız ve Güvenlilirlik:** Önbelleğe alma teknolojileri sayesinde çok daha hızlı açılır ve zayıf internet bağlantılarında bile güvenilir bir şekilde çalışır.
 
 ### PWA Olarak Nasıl Yüklenir?
 

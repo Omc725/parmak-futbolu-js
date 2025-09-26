@@ -1,100 +1,71 @@
-# Parmak Futbolu  ⚽
+# Parmak Futbolu ⚽
 
-![alt text](https://omc725.github.io/parmak-futbolu-js/icon-512.png)
+[![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![React](https://img.shields.io/badge/React-18-blue?logo=react)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-Hızlı-purple?logo=vite)](https://vitejs.dev/)
 
-Hızlı tempolu, eğlenceli ve tamamen tarayıcı tabanlı bir masa futbolu (langırt) oyunu! Takımını seç, yapay zekaya karşı farklı modlarda mücadele et ve şampiyonluğa ulaş!
+Hızlı tempolu, eğlenceli ve tamamen tarayıcı tabanlı bir langırt (masa futbolu) oyunu. React ve Vite ile modern bir Progressive Web App (PWA) olarak geliştirilmiştir. Takımını seç, yapay zekaya karşı farklı modlarda mücadele et ve şampiyonluğa ulaş!
 
-✨ Oyunu Hemen Oyna! ✨ https://omc725.github.io/parmak-futbolu-js/
+<br>
 
-Bu proje, React ve Vite kullanılarak geliştirilmiştir ve modern bir Progressive Web App (PWA) olarak tasarlanmıştır.
-🚀 Bu Bir Progressive Web App (PWA)!
+> ✨ **Oyunu Hemen Oyna!** ✨
+>
+> **[https://omc725.github.io/parmak-futbolu-js/](https://omc725.github.io/parmak-futbolu-js/)**
 
-Bu oyun, sıradan bir web sitesinden daha fazlasıdır. Bir PWA olması sayesinde size uygulama benzeri bir deneyim sunar.
-PWA Nedir?
+<br>
 
-Progressive Web App (PWA), modern web teknolojilerini kullanarak kullanıcılara mobil uygulama benzeri bir deneyim sunan web uygulamasıdır. Bunun anlamı:
+![Oyun Ekran Görüntüsü](https://omc725.github.io/parmak-futbolu-js/icon-512.png)
 
-    Yüklenebilirlik: Oyunu bilgisayarınızın masaüstüne veya telefonunuzun ana ekranına bir uygulama gibi ekleyebilirsiniz.
+## 🌟 Temel Özellikler
 
-    Çevrimdışı Çalışma: Bir kez yüklendikten sonra, internet bağlantınız olmasa bile oyunu açıp oynayabilirsiniz. Kariyeriniz her zaman sizinle!
+- **⚡ Hızlı Maç:** Yapay zekaya karşı anında bir maça başlayın.
+- **🏆 Lig Modu:** Çift devreli fikstür usulüyle tam bir sezon boyunca mücadele edin ve puan tablosunda zirveye tırmanın.
+- **🏅 Turnuva Modu:** 8 takımlı tek elemeli turnuvada şampiyon olmak için yarışın.
+- **🥅 Penaltı Atışları:** Eleme maçlarında beraberlik durumunda heyecan dolu penaltı atışlarıyla galibi belirleyin.
+- **⚙️ Ayarlanabilir Zorluk:** Yapay zekanın yeteneğini kendi oyun seviyenize göre ayarlayın.
+- **📱 PWA Desteği:** Oyunu bir uygulama gibi bilgisayarınıza veya telefonunuza yükleyip **çevrimdışı** oynayın.
 
-    Hız: Uygulama, önbelleğe alma teknolojileri sayesinde çok daha hızlı açılır ve çalışır.
+## 🚀 Progressive Web App (PWA) Deneyimi
 
-    Güvenilirlik: İnternet bağlantınız zayıf olsa bile güvenilir bir şekilde çalışır.
+Bu oyun, sıradan bir web sitesinden daha fazlasıdır. Bir PWA olması sayesinde size uygulama benzeri bir deneyim sunar:
 
-PWA Olarak Nasıl Yüklenir?
+- **Yüklenebilirlik:** Oyunu bilgisayarınızın masaüstüne veya telefonunuzun ana ekranına bir uygulama gibi ekleyebilirsiniz.
+- **Çevrimdışı Çalışma:** Bir kez yüklendikten sonra, internet bağlantınız olmasa bile oyunu açıp oynayabilirsiniz.
+- **Hız ve Güvenilirlik:** Önbelleğe alma teknolojileri sayesinde çok daha hızlı açılır ve zayıf internet bağlantılarında bile güvenilir bir şekilde çalışır.
 
-Oyunu bir uygulama gibi yüklemek çok kolaydır:
+### PWA Olarak Nasıl Yüklenir?
 
-🖥️ Bilgisayarda (Chrome, Edge):
+#### 🖥️ Masaüstü (Chrome, Edge)
+1.  [Oyun linkine](https://omc725.github.io/parmak-futbolu-js/) gidin.
+2.  Adres çubuğunun sağında görünen **Yükle (Install)** ikonuna tıklayın.
+3.  Çıkan pencerede "Yükle" butonuna basın. Oyun artık masaüstünüzde!
 
-    Oyun linkine gidin.
+#### 📱 Mobil (Android/iOS)
+1.  Oyunu tarayıcınızda (Chrome, Safari vb.) açın.
+2.  Tarayıcının menüsünü açın (genellikle üç nokta `⋮` veya paylaş `📤` ikonu).
+3.  **"Ana Ekrana Ekle" (Add to Home Screen)** veya **"Uygulamayı Yükle" (Install App)** seçeneğine dokunun.
 
-    Adres çubuğunun en sağında, ekran veya bilgisayar monitörü gibi görünen Yükle (Install) ikonuna tıklayın.
+## 🛠️ Kullanılan Teknolojiler
 
-    Çıkan pencerede "Yükle" butonuna basın.
+- **Kütüphane:** React
+- **Derleme Aracı:** Vite
+- **Stil:** Tailwind CSS
+- **Dağıtım:** GitHub Pages & GitHub Actions
+- **PWA:** Vite PWA Plugin
 
-    Oyun artık masaüstünüzde bir kısayol ile açabileceğiniz bağımsız bir uygulama olarak görünecektir.
+## 🚀 Kurulum ve Yerel Geliştirme Ortamı
 
-📱 Mobil Cihazlarda (Android/iOS):
-
-    Oyun linkini tarayıcınızda (Chrome, Safari vb.) açın.
-
-    Tarayıcının menüsünü açın (genellikle üç nokta ⋮ veya paylaş 📤 ikonu).
-
-    "Ana Ekrana Ekle" (Add to Home Screen) veya "Uygulamayı Yükle" (Install App) seçeneğini bulun ve tıklayın.
-
-    Oyun, diğer uygulamalarınızın yanında bir ikon olarak ana ekranınıza eklenecektir.
-
-🎮 Oyun Modları
-
-    Kariyer Modu: (Çok Yakında) Favori liginden bir takım seç, sezonlar boyunca mücadele et, şampiyonluklar kazan ve Avrupa kupalarına katılma hakkı elde et!
-    (Şimdilik sadece Lig Modu mevcut.)
-
-    Hızlı Maç: Canın sıkıldığında anında bir maça başla.
-
-    Turnuva Modu: (Çok Yakında) Tek elemeli turnuvalarda zafere ulaşmaya çalış.
-
-🛠️ Kullanılan Teknolojiler
-
-    Kütüphane: React
-
-    Derleme Aracı: Vite
-
-    Stil: Tailwind CSS
-
-    Dağıtım: GitHub Pages & GitHub Actions
-
-    PWA: Vite PWA Plugin
-
-
-# Parmak Futbolu (JavaScript & React Versiyonu)
-
-React ile geliştirilmiş dinamik ve etkileşimli bir langırt (masa futbolu) oyunudur. Bu proje, TypeScript ile yazılmış orijinal versiyonun JavaScript'e dönüştürülmüş halidir.
-
-## Özellikler
-
-- **Hızlı Maç:** Anında bir yapay zeka rakibe karşı oynamaya başlayın.
-- **Lig Modu:** Tam bir sezon boyunca tüm takımlarla çift devreli fikstür usulü mücadele edin ve puan tablosunda zirveye oynamaya çalışın.
-- **Turnuva Modu:** 8 takımlı tek elemeli bir turnuvada şampiyon olmak için yarışın.
-- **Penaltı Atışları:** Eleme maçlarında beraberlik durumunda heyecan dolu penaltı atışları.
-- **Farklı Zorluk Seviyeleri:** Yapay zekanın yeteneğini kendinize göre ayarlayın.
-- **PWA Desteği:** Oyunu bir uygulama gibi bilgisayarınıza veya telefonunuza yükleyip çevrimdışı oynayabilirsiniz.
-
-## Kurulum ve Çalıştırma
-
-Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin.
+Projeyi yerel makinenizde çalıştırmak ve geliştirmeye başlamak için aşağıdaki adımları izleyin.
 
 ### Gereksinimler
-
 - [Node.js](https://nodejs.org/) (v18 veya üstü)
 - npm (Node.js ile birlikte gelir)
 
 ### Adımlar
 
-1.  **Projeyi klonlayın (veya dosyaları indirin):**
+1.  **Projeyi klonlayın:**
     ```bash
-    git clone <proje-linki>
+    git clone [https://github.com/omc725/parmak-futbolu-js.git](https://github.com/omc725/parmak-futbolu-js.git)
     cd parmak-futbolu-js
     ```
 
@@ -108,14 +79,28 @@ Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin.
     npm run dev
     ```
 
-4.  Tarayıcınızda `http://localhost:3000` adresini açın.
+4.  Tarayıcınızda `http://localhost:3000` (veya Vite'in belirttiği port) adresini açın.
 
-## Proje Yapısı
+## 📁 Proje Yapısı
 
-- **`/public`**: İkonlar ve `manifest.json` gibi statik varlıkların bulunduğu klasör.
-- **`/src`**: Tüm React kaynak kodlarının bulunduğu ana klasör.
-  - **`/components`**: Yeniden kullanılabilir React bileşenleri (Oyun alanı, tablolar vb.).
-  - **`/utils`**: Oyun modları ve yardımcı fonksiyonlar.
-  - **`App.jsx`**: Ana uygulama bileşeni ve durum yönetimi.
-  - **`index.jsx`**: Uygulamanın başlangıç noktası.
-- **`vite.config.js`**: Projenin derleme ve geliştirme sunucusu ayarlarını içeren Vite yapılandırma dosyası.
+Projenin temel dosya yapısı aşağıdaki gibidir:
+
+```
+/
+├── public/              # Statik varlıklar (ikonlar, manifest.json)
+├── src/
+│   ├── components/      # Yeniden kullanılabilir React bileşenleri
+│   ├── utils/           # Oyun modları ve yardımcı fonksiyonlar
+│   ├── App.jsx          # Ana uygulama bileşeni ve durum yönetimi
+│   └── index.jsx        # Uygulamanın başlangıç noktası
+├── .gitignore           # Git tarafından izlenmeyecek dosyalar
+├── index.html           # Ana HTML dosyası
+├── package.json         # Proje bağımlılıkları ve script'leri
+└── vite.config.js       # Vite yapılandırma dosyası
+```
+
+## 🗺️ Gelecek Planları (Roadmap)
+
+- [ ] **Kariyer Modu:** Favori liginizden bir takım seçin, sezonlar boyunca mücadele edin, şampiyonluklar kazanın ve Avrupa kupalarına katılma hakkı elde edin.
+- [ ] Gelişmiş oyuncu ve takım istatistikleri.
+- [ ] Farklı oyun sahası ve top görünümleri

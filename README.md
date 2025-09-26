@@ -103,4 +103,12 @@ Projenin temel dosya yapısı aşağıdaki gibidir:
 
 - [ ] **Kariyer Modu:** Favori liginizden bir takım seçin, sezonlar boyunca mücadele edin, şampiyonluklar kazanın ve Avrupa kupalarına katılma hakkı elde edin.
 - [ ] Gelişmiş oyuncu ve takım istatistikleri.
-- [ ] Farklı oyun sahası ve top görünümleri
+- [ ] Farklı oyun sahası ve top görünümleri.
+
+## 🤝 Katkıda Bulunma
+
+Katkılarınız projeyi daha iyi bir hale getirecektir! Lütfen bir "issue" açarak veya "pull request" göndererek katkıda bulunmaktan çekinmeyin.
+
+## 📄 Lisans
+
+Bu proje MIT Lisansı altında dağıtılmaktadır. Daha fazla bilgi için `LICENSE` dosyasına göz atın.

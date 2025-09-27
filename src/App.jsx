@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import GameCanvas from './components/GameCanvas.jsx';
-import { LEAGUES, DIFFICULTY_LEVELS, GAME_DURATION, HALF_TIME, OVERTIME_DURATION } from './constants.js';
-import * as Career from './utils/career.js';
+import { TEAMS, DIFFICULTY_LEVELS, GAME_DURATION, HALF_TIME, OVERTIME_DURATION } from './constants.js';
 import LeagueTable from './components/LeagueTable.jsx';
 import TournamentBracket from './components/TournamentBracket.jsx';
 import { generateFixtures, calculateLeagueTable, generateTournamentBracket, simulateMatch } from './utils/gameModes.js';
@@ -9,11 +8,9 @@ import PenaltyShootout from './components/PenaltyShootout.jsx';
 
 const App = () => {
     const [screen, setScreen] = useState('menu');
-    const [career, setCareer] = useState(Career.loadCareer());
-    const [player1Team, setPlayer1Team] = useState(LEAGUES["super_lig"].teams[0]);
-    const [player2Team, setPlayer2Team] = useState(LEAGUES["super_lig"].teams[1]);
+    const [player1Team, setPlayer1Team] = useState(TEAMS[0]);
+    const [player2Team, setPlayer2Team] = useState(TEAMS[1]);
     const [selectedOpponent, setSelectedOpponent] = useState(null);
-    const [selectedLeagueId, setSelectedLeagueId] = useState(null);
     const [isOpponentAI, setIsOpponentAI] = useState(true);
     const [difficulty, setDifficulty] = useState('normal');
     
@@ -25,6 +22,15 @@ const App = () => {
 
     const [overlay, setOverlay] = useState(null);
     const [countdown, setCountdown] = useState(3);
+
+    const [league, setLeague] = useState(() => {
+        const saved = localStorage.getItem('league');
+        return saved ? JSON.parse(saved) : null;
+    });
+    const [tournament, setTournament] = useState(() => {
+        const saved = localStorage.getItem('tournament');
+        return saved ? JSON.parse(saved) : null;
+    });
     
     const [selectionPurpose, setSelectionPurpose] = useState('quick');
     const [currentMatch, setCurrentMatch] = useState(null);
@@ -363,60 +369,22 @@ const App = () => {
     const renderScreen = () => {
         switch (screen) {
             case 'menu': return (
-    <div className="w-full max-w-md bg-slate-800/50 p-6 rounded-2xl shadow-2xl border border-slate-700/50 flex flex-col gap-4">
-        <h1 className="text-5xl font-extrabold text-center text-white drop-shadow-lg mb-4">Parmak Futbolu</h1>
-        
-        {/* Hızlı Maç Modu */}
-        <button 
-            onClick={() => { 
-                setSelectionPurpose('quick'); 
-                // Hızlı maç için tüm takımları listelemek üzere `team_selection` ekranına git
-                // Lig seçimi bu mod için gerekli değil
-                setScreen('team_selection'); 
-            }} 
-            className="w-full px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 rounded-lg text-xl font-bold shadow-lg transform hover:scale-105 transition-transform duration-200"
-        >
-            Hızlı Maç
-        </button>
-        
-        {/* Ayırıcı Çizgi */}
-        <div className="border-t border-slate-700 my-2"></div>
+                <div className="w-full max-w-md bg-slate-800/50 p-6 rounded-2xl shadow-2xl border border-slate-700/50 flex flex-col gap-4">
+                    <h1 className="text-5xl font-extrabold text-center text-white drop-shadow-lg mb-4">Parmak Futbolu</h1>
+                    
+                    <button onClick={() => { setSelectionPurpose('quick'); setScreen('team_selection'); }} className="w-full px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 rounded-lg text-xl font-bold shadow-lg transform hover:scale-105 transition-transform duration-200">Hızlı Maç</button>
+                    
+                    <div className="border-t border-slate-700 my-2"></div>
 
-        {/* Kariyer Modu */}
+                    {league && <button onClick={() => handleContinueGame('league')} className="w-full px-6 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-lg text-xl font-bold shadow-lg transform hover:scale-105 transition-transform duration-200">Lige Devam Et ({league.currentWeek}. Hafta)</button>}
+                    <button onClick={() => startNewGame('league')} className="w-full px-6 py-3 bg-blue-800/80 hover:bg-blue-700/80 rounded-lg text-lg font-semibold shadow-md">Yeni Lige Başla</button>
 
-        {/* Kayıtlı bir kariyer varsa "Devam Et" butonunu göster */}
-        {Career.hasSavedCareer() && (
-            <button 
-                onClick={() => {
-                    // Kariyer verisini tekrar yükleyip state'e atayalım ki en güncel hali olsun.
-                    setCareer(Career.loadCareer()); 
-                    setScreen('career_hub');
-                }} 
-                className="w-full px-6 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-lg text-xl font-bold shadow-lg transform hover:scale-105 transition-transform duration-200"
-            >
-                Kariyerine Devam Et
-            </button>
-        )}
-
-        {/* "Yeni Kariyer Başla" butonu */}
-        <button 
-            onClick={() => {
-                // Not: Bu basit yaklaşımda, yeni kariyere başlamak eskisini direkt siler.
-                // Gelecekte buraya bir "Emin misiniz?" onayı eklenebilir.
-                if (Career.hasSavedCareer()) {
-                    Career.deleteCareer();
-                    setCareer(null);
-                }
-                setSelectionPurpose('career');
-                // Kariyer modu için önce lig seçme ekranına yönlendir
-                setScreen('league_selection'); 
-            }} 
-            className="w-full px-6 py-3 bg-blue-800/80 hover:bg-blue-700/80 rounded-lg text-lg font-semibold shadow-md"
-        >
-            Yeni Kariyer Başla
-        </button>
-    </div>
-);
+                    <div className="border-t border-slate-700 my-2"></div>
+                    
+                    {tournament && !tournament.winner && <button onClick={() => handleContinueGame('tournament')} className="w-full px-6 py-4 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 rounded-lg text-xl font-bold shadow-lg transform hover:scale-105 transition-transform duration-200">Turnuvaya Devam Et</button>}
+                    <button onClick={() => startNewGame('tournament')} className="w-full px-6 py-3 bg-purple-800/80 hover:bg-purple-700/80 rounded-lg text-lg font-semibold shadow-md">Yeni Turnuvaya Başla</button>
+                </div>
+            );
             case 'team_selection': return (
                 <div className="w-full max-w-2xl bg-slate-800/50 p-6 rounded-2xl shadow-2xl border border-slate-700/50">
                     <h2 className="text-3xl font-bold mb-4 text-center">Takımını Seç</h2>
